@@ -1,5 +1,6 @@
 import pytest
 from playwright.sync_api import sync_playwright
+from constants.constants_main import MainConstants
 
 
 @pytest.fixture(scope="session")
@@ -13,6 +14,7 @@ def pw(request):
             browser = playwright.webkit.launch(headless=False)
         context = browser.new_context()
         page = context.new_page()
+        page.goto(MainConstants.URL)
         yield page
         page.close()
         browser.close()

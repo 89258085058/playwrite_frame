@@ -1,4 +1,5 @@
 from pages.base_page import BasePage
+from locators.main_locators import MainLocators
 
 
 class ExamplePage(BasePage):
@@ -7,7 +8,6 @@ class ExamplePage(BasePage):
         super().__init__(pw)
 
     def go_to_main_page(self):
-        self.pw.goto("https://playwright-todomvc.antonzimaiev.repl.co/#/")
-        self.pw.get_by_placeholder("What needs to be done?").click()
-        self.pw.get_by_placeholder("What needs to be done?").fill("Создать первый сценарий playwright")
-        self.pw.get_by_placeholder("What needs to be done?").press("Enter")
+        self.pw.get_by_placeholder(MainLocators.input_name).click()
+        self.pw.get_by_placeholder(MainLocators.input_name).fill("Создать первый сценарий playwright")
+        self.pw.get_by_placeholder(MainLocators.input_name).press("Enter")
