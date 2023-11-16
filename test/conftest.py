@@ -10,7 +10,7 @@ from constants.constants_main import MainConstants
 def pw(request):
     with sync_playwright() as playwright:
         if request.config.getoption("--browser_name") == 'chrome':
-            browser = playwright.chromium.launch(headless=False)
+            browser = playwright.chromium.launch()
         elif request.config.getoption("--browser_name") == 'firefox':
             browser = playwright.firefox.launch(headless=False)
         elif request.config.getoption("--browser_name") == 'safari':
