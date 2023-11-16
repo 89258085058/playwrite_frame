@@ -20,6 +20,6 @@ class ExamplePage(BasePage):
 
     def assert_url_page(self):
         element = self.pw.locator(MainLocators.header)
-        assert "Устройства" in element.inner_text()
+        assert "Устройсва" in element.inner_text()
 
 
